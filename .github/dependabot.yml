@@ -1,68 +1,64 @@
+# Dependabot updates are grouped into one monthly version-update PR across ecosystems.
+# Security updates are grouped per ecosystem where GitHub supports grouped security updates.
 version: 2
+multi-ecosystem-groups:
+  monthly-dependencies:
+    schedule:
+      interval: monthly
+      time: 09:00
+      timezone: America/Los_Angeles
+    labels:
+    - dependencies
 updates:
-  # Python dependencies
-  - package-ecosystem: "pip"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
-    open-pull-requests-limit: 10
-    reviewers:
-      - "jlbadano"
-    assignees:
-      - "jlbadano"
-    commit-message:
-      prefix: "deps"
-      prefix-development: "deps-dev"
-      include: "scope"
-    labels:
-      - "dependencies"
-      - "python"
-    allow:
-      - dependency-type: "direct"
-      - dependency-type: "indirect"
-    ignore:
-      # Ignore major version updates for critical dependencies
-      - dependency-name: "pydantic"
-        update-types: ["version-update:semver-major"]
-      - dependency-name: "httpx"
-        update-types: ["version-update:semver-major"]
-
-  # GitHub Actions
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
-    open-pull-requests-limit: 5
-    reviewers:
-      - "jlbadano"
-    assignees:
-      - "jlbadano"
-    commit-message:
-      prefix: "ci"
-      include: "scope"
-    labels:
-      - "dependencies"
-      - "github-actions"
-
-  # Docker dependencies
-  - package-ecosystem: "docker"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
-    open-pull-requests-limit: 5
-    reviewers:
-      - "jlbadano"
-    assignees:
-      - "jlbadano"
-    commit-message:
-      prefix: "docker"
-      include: "scope"
-    labels:
-      - "dependencies"
-      - "docker" 
+- package-ecosystem: github-actions
+  directory: /
+  patterns:
+  - '*'
+  multi-ecosystem-group: monthly-dependencies
+  groups:
+    github-actions-security:
+      applies-to: security-updates
+      patterns:
+      - '*'
+- package-ecosystem: pip
+  directories:
+  - /
+  - /scripts
+  patterns:
+  - '*'
+  multi-ecosystem-group: monthly-dependencies
+  groups:
+    pip-security:
+      applies-to: security-updates
+      patterns:
+      - '*'
+  allow:
+  - dependency-type: direct
+  - dependency-type: indirect
+  ignore:
+  - dependency-name: pydantic
+    update-types:
+    - version-update:semver-major
+  - dependency-name: httpx
+    update-types:
+    - version-update:semver-major
+- package-ecosystem: docker
+  directory: /
+  patterns:
+  - '*'
+  multi-ecosystem-group: monthly-dependencies
+  groups:
+    docker-security:
+      applies-to: security-updates
+      patterns:
+      - '*'
+- package-ecosystem: docker-compose
+  directory: /
+  patterns:
+  - '*'
+  multi-ecosystem-group: monthly-dependencies
+  groups:
+    docker-compose-security:
+      applies-to: security-updates
+      patterns:
+      - '*'
