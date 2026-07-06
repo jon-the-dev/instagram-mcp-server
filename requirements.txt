@@ -13,7 +13,7 @@ pydantic-settings>=2.1.0
 
 # Async support
 asyncio-throttle>=1.0.2
-aiofiles>=23.2.1
+aiofiles>=25.1.0
 nest-asyncio>=1.5.0
 
 # Data handling
