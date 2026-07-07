@@ -10,14 +10,14 @@
 
 **Do NOT open a public GitHub issue for security vulnerabilities.**
 
-Email **security@zerodaysec.com** with:
+Email **security@team-skynet.io** with:
 
 - Description of the vulnerability
 - Steps to reproduce
 - Potential impact
 - Suggested fix (if known)
 
-We will acknowledge within **48 hours** and aim to release fixes for critical issues within **30 days**.
+We will acknowledge within **72 hours** and aim to release fixes for critical issues within **30 days**.
 
 ## Credential Overview
 
