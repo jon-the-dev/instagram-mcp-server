@@ -1,5 +1,5 @@
 # Core MCP dependencies
-mcp>=1.0.0
+mcp>=1.28.1
 fastmcp>=3.4.3
 
 # HTTP client for Instagram API
