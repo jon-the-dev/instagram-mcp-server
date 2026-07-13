@@ -40,6 +40,6 @@ flake8>=6.0.0
 mypy>=1.7.0
 
 # Optional: For advanced features
-redis>=5.0.0  # For caching
+redis>=8.0.1  # For caching
 sqlalchemy>=2.0.0  # For data persistence
 alembic>=1.13.0  # For database migrations 
