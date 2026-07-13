@@ -17,7 +17,7 @@ nest-asyncio>=1.6.0
 aiofiles>=25.1.0
 
 # Data handling
-python-multipart>=0.0.6
+python-multipart>=0.0.32
 pillow>=12.3.0
 
 # Logging and monitoring
