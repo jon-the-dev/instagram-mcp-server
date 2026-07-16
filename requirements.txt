@@ -1,14 +1,14 @@
 # Core MCP dependencies
-mcp>=1.0.0
-fastmcp>=3.4.3
+mcp>=1.28.1
+fastmcp>=3.4.4
 
 # HTTP client for Instagram API
-httpx>=0.25.0
+httpx>=0.28.1
 requests>=2.34.2
 
 # Environment and configuration
-python-dotenv>=1.0.0
-pydantic>=2.5.0
+python-dotenv>=1.2.2
+pydantic>=2.13.4
 pydantic-settings>=2.14.2
 
 # Async support
@@ -17,7 +17,7 @@ nest-asyncio>=1.6.0
 aiofiles>=25.1.0
 
 # Data handling
-python-multipart>=0.0.6
+python-multipart>=0.0.32
 pillow>=12.3.0
 
 # Logging and monitoring
@@ -28,18 +28,18 @@ rich>=15.0.0
 python-dateutil>=2.9.0.post0
 
 # Testing (development)
-pytest>=7.4.0
-pytest-asyncio>=0.21.0
-pytest-cov>=4.1.0
-pytest-mock>=3.12.0
+pytest>=9.1.1
+pytest-asyncio>=1.4.0
+pytest-cov>=7.1.0
+pytest-mock>=3.15.1
 
 # Development tools
-black>=23.0.0
+black>=26.5.1
 isort>=8.0.1
-flake8>=6.0.0
-mypy>=1.7.0
+flake8>=7.3.0
+mypy>=2.3.0
 
 # Optional: For advanced features
-redis>=5.0.0  # For caching
-sqlalchemy>=2.0.0  # For data persistence
-alembic>=1.13.0  # For database migrations 
+redis>=8.0.1  # For caching
+sqlalchemy>=2.0.51  # For data persistence
+alembic>=1.18.5  # For database migrations 
