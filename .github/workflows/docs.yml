@@ -16,6 +16,10 @@ on:
       - 'README.md'
       - 'AUTHENTICATION_GUIDE.md'
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref_name != github.event.repository.default_branch }}
+
 jobs:
   docs:
     name: Build Documentation
