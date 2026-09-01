@@ -34,7 +34,7 @@ services:
 
   # Redis for caching (optional)
   redis:
-    image: redis:7-alpine
+    image: redis:8-alpine
     container_name: instagram-mcp-redis
     restart: unless-stopped
     ports:
